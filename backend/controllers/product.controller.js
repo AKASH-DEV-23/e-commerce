@@ -6,7 +6,7 @@ import Product from "../models/product.model.js";
 export const getAllProducts = async (req, res) => {
     try {
         const products = await Product.find({});
-        res.json(products);
+        res.json({ products });
 
     } catch (error) {
         console.log("Error in getAllProducts controller", error.message);
@@ -128,7 +128,7 @@ export const getRecommendedProducts = async (req, res) => {
 export const getProductsByCategory = async (req, res) => {
     const { category } = req.params;
     try {
-        const products = await Products.find({ category });
+        const products = await Product.find({ category });
         res.json(products);
     } catch (error) {
         console.log("Error in getProductsByCategory controller", error.message);

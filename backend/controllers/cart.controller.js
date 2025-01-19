@@ -18,7 +18,7 @@ export const getCartProducts = async (req, res) => {
     }
 }
 
-export const addToCart = async () => {
+export const addToCart = async (req, res) => {
     try {
         const { productId } = req.body;
         const user = req.user;
@@ -32,7 +32,7 @@ export const addToCart = async () => {
         }
 
         await user.save();
-        res.josn(user.cartItems);
+        res.json(user.cartItems);
 
     } catch (error) {
         console.log("Error in addToCart controller", error.message);
