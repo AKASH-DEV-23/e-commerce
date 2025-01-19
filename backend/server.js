@@ -11,6 +11,7 @@ import analyticsRoutes from "./routes/analytics.route.js";
 
 import { connectDB } from "./lib/db.js";
 import cors from "cors";
+
 import path from "path";
 
 
